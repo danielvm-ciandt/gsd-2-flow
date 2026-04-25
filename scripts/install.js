@@ -498,6 +498,9 @@ const isLocal = args.includes('--local') || args.includes('-l')
 
 if (IS_POSTINSTALL) {
   // Running as npm postinstall hook — just do workspace linking + deps
+  // #region agent log
+  fetch('http://127.0.0.1:7747/ingest/93b5b814-87f1-410d-aca8-f5619ce3c0c6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'fe5872'},body:JSON.stringify({sessionId:'fe5872',location:'scripts/install.js:postinstall-block',message:'install.js postinstall block reached',data:{cwd:process.cwd(),packageRoot},timestamp:Date.now(),hypothesisId:'H-E'})}).catch(()=>{});
+  // #endregion
   linkWorkspacePackages()
   await installChromium()
   await installRtk()
