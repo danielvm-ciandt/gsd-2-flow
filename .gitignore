@@ -32,6 +32,14 @@ Thumbs.db
 .env.*
 !.env.example
 node_modules/
+# bundledDependencies for release branch — sharp macOS platform binaries
+!node_modules/sharp/
+!node_modules/@img/
+!node_modules/@img/colour/
+!node_modules/@img/sharp-darwin-x64/
+!node_modules/@img/sharp-darwin-arm64/
+!node_modules/@img/sharp-libvips-darwin-x64/
+!node_modules/@img/sharp-libvips-darwin-arm64/
 .next/
 # /dist/ intentionally tracked on release branch for GitHub install
 !/pkg/dist/modes/
