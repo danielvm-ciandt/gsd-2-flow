@@ -15,7 +15,7 @@ This version is different. GSD is now a standalone CLI built on the [Pi SDK](htt
 
 One command. Walk away. Come back to a built project with clean git history.
 
-<pre><code>npm install -g github:danielvm-ciandt/gsd-2-flow</code></pre>
+<pre><code>npm install -g github:danielvm-ciandt/gsd-2-flow#release</code></pre>
 
 > GSD now provisions a managed [RTK](https://github.com/rtk-ai/rtk) binary on supported macOS, Linux, and Windows installs to compress shell-command output in `bash`, `async_bash`, `bg_shell`, and verification flows. GSD forces `RTK_TELEMETRY_DISABLED=1` for all managed invocations. Set `GSD_RTK_DISABLED=1` to disable the integration.
 
@@ -320,7 +320,7 @@ Step mode is the on-ramp. Auto mode is the highway.
 ### Install
 
 ```bash
-npm install -g github:danielvm-ciandt/gsd-2-flow
+npm install -g github:danielvm-ciandt/gsd-2-flow#release
 ```
 
 ### Log in to a provider
@@ -830,6 +830,6 @@ Use expensive models where quality matters (planning, complex execution) and che
 
 **The original GSD showed what was possible. This version delivers it.**
 
-**`npm install -g github:danielvm-ciandt/gsd-2-flow && gsd`**
+**`npm install -g github:danielvm-ciandt/gsd-2-flow#release && gsd`**
 
 </div>

@@ -104,6 +104,8 @@
     "@aws-sdk/client-bedrock-runtime": "^3.983.0",
     "@clack/prompts": "^1.1.0",
     "@google/genai": "^1.40.0",
+    "@img/sharp-darwin-arm64": "^0.34.5",
+    "@img/sharp-libvips-darwin-arm64": "^1.2.4",
     "@mariozechner/jiti": "^2.6.2",
     "@mistralai/mistralai": "^1.14.1",
     "@modelcontextprotocol/sdk": "^1.27.1",
@@ -127,7 +129,6 @@
     "proper-lockfile": "^4.1.2",
     "proxy-agent": "^6.5.0",
     "semver": "^7.7.4",
-    "sharp": "^0.34.5",
     "sql.js": "^1.14.1",
     "strip-ansi": "^7.1.0",
     "undici": "^7.24.2",
@@ -150,8 +151,17 @@
     "@gsd-build/engine-linux-x64-gnu": ">=2.10.2",
     "@gsd-build/engine-win32-x64-msvc": ">=2.10.2",
     "fsevents": "~2.3.3",
-    "koffi": "^2.9.0"
+    "koffi": "^2.9.0",
+    "sharp": "^0.34.5"
   },
+  "bundledDependencies": [
+    "sharp",
+    "@img/colour",
+    "@img/sharp-darwin-x64",
+    "@img/sharp-darwin-arm64",
+    "@img/sharp-libvips-darwin-x64",
+    "@img/sharp-libvips-darwin-arm64"
+  ],
   "overrides": {
     "gaxios": "7.1.4"
   }
