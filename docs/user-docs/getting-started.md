@@ -44,7 +44,7 @@ git --version    # should print 2.20+
 **Step 4 — Install GSD:**
 
 ```bash
-npm install -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 ```
 
 **Step 5 — Set up your LLM provider:**
@@ -116,7 +116,7 @@ git --version    # should print 2.20+
 **Step 4 — Install GSD:**
 
 ```powershell
-npm install -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 ```
 
 **Step 5 — Set up your LLM provider:**
@@ -220,7 +220,7 @@ git --version    # should print 2.20+
 **Step 3 — Install GSD:**
 
 ```bash
-npm install -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 ```
 
 **Step 4 — Set up your LLM provider:**
@@ -263,7 +263,7 @@ Inside the session, type `/model` to confirm your LLM is connected.
 > npm config set prefix '~/.npm-global'
 > echo 'export PATH="$HOME/.npm-global/bin:$PATH"' >> ~/.bashrc
 > source ~/.bashrc
-> npm install -g gsd-pi
+> npm install -g github:danielvm-ciandt/gsd-2-flow
 > ```
 
 ---
@@ -402,7 +402,7 @@ GSD is also available as a VS Code extension. Install from the marketplace (publ
 - **Sidebar dashboard** — connection status, model info, token usage
 - **Full command palette** — start/stop agent, switch models, export sessions
 
-The CLI (`gsd-pi`) must be installed first — the extension connects to it via RPC.
+The CLI must be installed first — the extension connects to it via RPC.
 
 ---
 
@@ -439,7 +439,7 @@ gsd sessions
 GSD checks for updates every 24 hours and prompts at startup. You can also update manually:
 
 ```bash
-npm update -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 ```
 
 Or from within a session:

@@ -26,7 +26,8 @@ import { getAutoWorktreePath } from "./auto-worktree.js";
 import { projectRoot } from "./commands/context.js";
 import { loadPrompt } from "./prompt-loader.js";
 
-const UPDATE_REGISTRY_URL = "https://registry.npmjs.org/gsd-pi/latest";
+// Version check via GitHub releases API — fork is not published to npm
+const UPDATE_REGISTRY_URL = "https://api.github.com/repos/danielvm-ciandt/gsd-2-flow/releases/latest";
 const UPDATE_FETCH_TIMEOUT_MS = 5000;
 
 // Detects a bun-installed gsd via `process.argv[1]`. Mirrors isBunInstall in
@@ -57,8 +58,10 @@ async function fetchLatestVersionForCommand(): Promise<string | null> {
   try {
     const res = await fetch(UPDATE_REGISTRY_URL, { signal: controller.signal });
     if (!res.ok) return null;
-    const data = (await res.json()) as { version?: string };
-    const latest = typeof data.version === "string" ? data.version.trim().replace(/^v/, "") : "";
+    // GitHub releases API returns `tag_name` (e.g. "v2.77.0"); fall back to `version` for compat
+    const data = (await res.json()) as { tag_name?: string; version?: string };
+    const raw = data.tag_name ?? data.version ?? "";
+    const latest = typeof raw === "string" ? raw.trim().replace(/^v/, "") : "";
     return latest.length > 0 ? latest : null;
   } catch {
     return null;
@@ -435,14 +438,14 @@ function compareSemverLocal(a: string, b: string): number {
 export async function handleUpdate(ctx: ExtensionCommandContext): Promise<void> {
   const { execSync } = await import("node:child_process");
 
-  const NPM_PACKAGE = "gsd-pi";
+  const NPM_PACKAGE = "github:danielvm-ciandt/gsd-2-flow";
   const current = process.env.GSD_VERSION || "0.0.0";
 
-  ctx.ui.notify(`Current version: v${current}\nChecking npm registry...`, "info");
+  ctx.ui.notify(`Current version: v${current}\nChecking for updates...`, "info");
 
   const latest = await fetchLatestVersionForCommand();
   if (!latest) {
-    ctx.ui.notify("Failed to reach npm registry. Check your network connection.", "error");
+    ctx.ui.notify("Failed to reach GitHub releases. Check your network connection.", "error");
     return;
   }
 
@@ -453,7 +456,7 @@ export async function handleUpdate(ctx: ExtensionCommandContext): Promise<void> 
 
   ctx.ui.notify(`Updating: v${current} → v${latest}...`, "info");
 
-  const installCmd = resolveInstallCommand(`${NPM_PACKAGE}@latest`);
+  const installCmd = resolveInstallCommand(NPM_PACKAGE);
   try {
     execSync(installCmd, {
       stdio: ["ignore", "pipe", "ignore"],

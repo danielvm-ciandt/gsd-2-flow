@@ -1,15 +1,15 @@
 {
-  "name": "gsd-pi",
+  "name": "gsd-2-flow",
   "version": "2.77.0",
   "description": "GSD — Get Shit Done coding agent",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gsd-build/gsd-2.git"
+    "url": "https://github.com/danielvm-ciandt/gsd-2-flow.git"
   },
-  "homepage": "https://github.com/gsd-build/gsd-2#readme",
+  "homepage": "https://github.com/danielvm-ciandt/gsd-2-flow#readme",
   "bugs": {
-    "url": "https://github.com/gsd-build/gsd-2/issues"
+    "url": "https://github.com/danielvm-ciandt/gsd-2-flow/issues"
   },
   "type": "module",
   "workspaces": [
@@ -19,8 +19,7 @@
   ],
   "bin": {
     "gsd": "dist/loader.js",
-    "gsd-cli": "dist/loader.js",
-    "gsd-pi": "scripts/install.js"
+    "gsd-cli": "dist/loader.js"
   },
   "files": [
     "dist",

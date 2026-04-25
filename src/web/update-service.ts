@@ -1,8 +1,9 @@
 import { spawn } from "node:child_process"
 import { compareSemver } from "../update-check.ts"
 
-const NPM_PACKAGE_NAME = "gsd-pi"
-const REGISTRY_URL = `https://registry.npmjs.org/${NPM_PACKAGE_NAME}/latest`
+const NPM_PACKAGE_NAME = "github:danielvm-ciandt/gsd-2-flow"
+// Version check via GitHub releases API — fork is not published to npm
+const REGISTRY_URL = `https://api.github.com/repos/danielvm-ciandt/gsd-2-flow/releases/latest`
 const FETCH_TIMEOUT_MS = 5000
 const NPM_COMMAND = process.platform === "win32" ? "npm.cmd" : "npm"
 
@@ -28,8 +29,10 @@ export async function checkForUpdate(): Promise<UpdateCheckResult> {
       return { currentVersion, latestVersion: currentVersion, updateAvailable: false }
     }
 
-    const data = (await res.json()) as { version?: string }
-    const latestVersion = data.version || currentVersion
+    // GitHub releases API returns `tag_name` (e.g. "v2.77.0"); strip leading "v"
+    const data = (await res.json()) as { tag_name?: string; version?: string }
+    const rawVersion = data.tag_name?.replace(/^v/, '') || data.version
+    const latestVersion = rawVersion || currentVersion
 
     return {
       currentVersion,
@@ -59,7 +62,7 @@ export function getUpdateStatus(): UpdateState {
 }
 
 /**
- * Triggers an async global npm install of gsd-pi@latest.
+ * Triggers an async global npm install of the fork from GitHub.
  * Returns `true` if the update was started, `false` if one is already running.
  * The child process runs in the background; poll `getUpdateStatus()` for progress.
  */
@@ -70,7 +73,7 @@ export function triggerUpdate(targetVersion?: string): boolean {
 
   updateState = { status: "running", targetVersion }
 
-  const child = spawn(NPM_COMMAND, ["install", "-g", "gsd-pi@latest"], {
+  const child = spawn(NPM_COMMAND, ["install", "-g", NPM_PACKAGE_NAME], {
     stdio: ["ignore", "ignore", "pipe"],
     // Detach so the child process is not killed if the parent exits
     detached: false,

@@ -70,6 +70,6 @@ After pinning:
 
 ```bash
 node --version   # v24.x.x
-npm install -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 gsd --version
 ```

@@ -6,14 +6,14 @@ Control the [GSD-2 coding agent](https://github.com/gsd-build/gsd-2) directly fr
 
 ## Requirements
 
-- **GSD-2** installed globally: `npm install -g gsd-pi`
+- **GSD-2** installed globally: `npm install -g github:danielvm-ciandt/gsd-2-flow`
 - **Node.js** >= 22.0.0
 - **Git** installed and on PATH
 - **VS Code** >= 1.95.0
 
 ## Quick Start
 
-1. Install GSD: `npm install -g gsd-pi`
+1. Install GSD: `npm install -g github:danielvm-ciandt/gsd-2-flow`
 2. Install this extension
 3. Open a project folder in VS Code
 4. Click the **GSD icon** in the Activity Bar (left sidebar)

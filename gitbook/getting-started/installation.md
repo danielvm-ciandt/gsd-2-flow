@@ -3,7 +3,7 @@
 ## Install GSD
 
 ```bash
-npm install -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 ```
 
 Requires **Node.js 22.0.0 or later** (24 LTS recommended) and **Git**.
@@ -57,7 +57,7 @@ The extension provides:
 - **Sidebar dashboard** — connection status, model info, token usage, quick actions
 - **Full command palette** — start/stop agent, switch models, export sessions
 
-The CLI (`gsd-pi`) must be installed first — the extension connects to it via RPC.
+The CLI must be installed first — the extension connects to it via RPC.
 
 ## Web Interface
 

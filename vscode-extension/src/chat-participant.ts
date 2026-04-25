@@ -22,7 +22,7 @@ export function registerChatParticipant(
 				await client.start();
 			} catch (err) {
 				const msg = err instanceof Error ? err.message : String(err);
-				response.markdown(`**Failed to start GSD agent:** ${msg}\n\nMake sure \`gsd\` is installed (\`npm install -g gsd-pi\`) and try again.`);
+				response.markdown(`**Failed to start GSD agent:** ${msg}\n\nMake sure \`gsd\` is installed (\`npm install -g github:danielvm-ciandt/gsd-2-flow\`) and try again.`);
 				return;
 			}
 		}

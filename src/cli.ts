@@ -55,7 +55,7 @@ function exitIfManagedResourcesAreNewer(currentAgentDir: string): void {
   process.stderr.write(
     `[gsd] ${chalk.yellow('Version mismatch detected')}\n` +
     `[gsd] Synced resources are from ${chalk.bold(`v${managedVersion}`)}, but this \`gsd\` binary is ${chalk.dim(`v${currentVersion}`)}.\n` +
-    `[gsd] Run ${chalk.bold('npm install -g gsd-pi@latest')} or ${chalk.bold('gsd update')}, then try again.\n`,
+    `[gsd] Run ${chalk.bold('npm install -g github:danielvm-ciandt/gsd-2-flow')} or ${chalk.bold('gsd update')}, then try again.\n`,
   )
   process.exit(1)
 }

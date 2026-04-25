@@ -1,7 +1,7 @@
 import { execSync } from 'node:child_process'
 import { compareSemver, fetchLatestVersionFromRegistry, resolveInstallCommand } from './update-check.js'
 
-const NPM_PACKAGE = 'gsd-pi'
+const NPM_PACKAGE = 'github:danielvm-ciandt/gsd-2-flow'
 
 export async function runUpdate(): Promise<void> {
   const current = process.env.GSD_VERSION || '0.0.0'
@@ -29,7 +29,7 @@ export async function runUpdate(): Promise<void> {
 
   process.stdout.write(`${dim}Updating:${reset} v${current} → ${bold}v${latest}${reset}\n`)
 
-  const installCmd = resolveInstallCommand(`${NPM_PACKAGE}@latest`)
+  const installCmd = resolveInstallCommand(NPM_PACKAGE)
   try {
     execSync(installCmd, {
       stdio: 'inherit',

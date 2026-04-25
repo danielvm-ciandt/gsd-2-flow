@@ -43,7 +43,7 @@ It checks:
 
 ### `command not found: gsd` after install
 
-**Symptoms:** `npm install -g gsd-pi` succeeds but `gsd` isn't found.
+**Symptoms:** `npm install -g github:danielvm-ciandt/gsd-2-flow` succeeds but `gsd` isn't found.
 
 **Cause:** npm's global bin directory isn't in your shell's `$PATH`.
 
@@ -59,14 +59,14 @@ echo 'export PATH="$(npm prefix -g)/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-**Workaround:** Run `npx gsd-pi` or `$(npm prefix -g)/bin/gsd` directly.
+**Workaround:** Run `npm exec -g -- gsd` or `$(npm prefix -g)/bin/gsd` directly.
 
 **Common causes:**
 - **Homebrew Node** — `/opt/homebrew/bin` should be in PATH but sometimes isn't if Homebrew init is missing from your shell profile
 - **Version manager (nvm, fnm, mise)** — global bin is version-specific; ensure your version manager initializes in your shell config
 - **oh-my-zsh** — the `gitfast` plugin aliases `gsd` to `git svn dcommit`. Check with `alias gsd` and unalias if needed
 
-### `npm install -g gsd-pi` fails
+### `npm install -g github:danielvm-ciandt/gsd-2-flow` fails
 
 **Common causes:**
 - Missing workspace packages — fixed in v2.10.4+

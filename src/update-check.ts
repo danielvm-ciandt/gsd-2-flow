@@ -6,10 +6,11 @@ import { appRoot } from './app-paths.js'
 import { execSync } from 'node:child_process'
 
 const CACHE_FILE = join(appRoot, '.update-check')
-const NPM_PACKAGE_NAME = 'gsd-pi'
+const NPM_PACKAGE_NAME = 'github:danielvm-ciandt/gsd-2-flow'
 const CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000 // 24 hours
 const FETCH_TIMEOUT_MS = 5000
-const DEFAULT_REGISTRY_URL = `https://registry.npmjs.org/${NPM_PACKAGE_NAME}/latest`
+// Version check via GitHub API — no npm registry since this fork is not published to npm
+const DEFAULT_REGISTRY_URL = `https://api.github.com/repos/danielvm-ciandt/gsd-2-flow/releases/latest`
 
 interface UpdateCheckCache {
   lastCheck: number
@@ -102,7 +103,7 @@ export function resolveInstallCommand(pkg: string): string {
 }
 
 function printUpdateBanner(current: string, latest: string): void {
-  const installCmd = resolveInstallCommand('gsd-pi')
+  const installCmd = resolveInstallCommand('github:danielvm-ciandt/gsd-2-flow')
   process.stderr.write(
     `  ${chalk.yellow('Update available:')} ${chalk.dim(`v${current}`)} → ${chalk.bold(`v${latest}`)}\n` +
     `  ${chalk.dim('Run')} ${installCmd} ${chalk.dim('or')} /gsd update ${chalk.dim('to upgrade')}\n\n`,
