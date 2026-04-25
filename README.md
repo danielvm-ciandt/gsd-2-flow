@@ -2,11 +2,9 @@
 
 # GSD 2
 
-**The evolution of [Get Shit Done](https://github.com/gsd-build/get-shit-done) — now a real coding agent.**
+**The evolution of Get Shit Done — now a real coding agent.**
 
-[![npm version](https://img.shields.io/npm/v/gsd-pi?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/gsd-pi)
-[![npm downloads](https://img.shields.io/npm/dm/gsd-pi?style=for-the-badge&logo=npm&logoColor=white&color=CB3837)](https://www.npmjs.com/package/gsd-pi)
-[![GitHub stars](https://img.shields.io/github/stars/gsd-build/GSD-2?style=for-the-badge&logo=github&color=181717)](https://github.com/gsd-build/GSD-2)
+[![GitHub stars](https://img.shields.io/github/stars/danielvm-ciandt/gsd-2-flow?style=for-the-badge&logo=github&color=181717)](https://github.com/danielvm-ciandt/gsd-2-flow)
 [![Discord](https://img.shields.io/badge/Discord-Join%20us-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/invite/nKXTsAcmbT)
 [![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)](LICENSE)
 [![$GSD Token](https://img.shields.io/badge/$GSD-Dexscreener-1C1C1C?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIgZmlsbD0iIzAwRkYwMCIvPjwvc3ZnPg==&logoColor=00FF00)](https://dexscreener.com/solana/dwudwjvan7bzkw9zwlbyv6kspdlvhwzrqy6ebk8xzxkv)
@@ -17,7 +15,7 @@ This version is different. GSD is now a standalone CLI built on the [Pi SDK](htt
 
 One command. Walk away. Come back to a built project with clean git history.
 
-<pre><code>npm install -g gsd-pi@latest</code></pre>
+<pre><code>npm install -g github:danielvm-ciandt/gsd-2-flow</code></pre>
 
 > GSD now provisions a managed [RTK](https://github.com/rtk-ai/rtk) binary on supported macOS, Linux, and Windows installs to compress shell-command output in `bash`, `async_bash`, `bg_shell`, and verification flows. GSD forces `RTK_TELEMETRY_DISABLED=1` for all managed invocations. Set `GSD_RTK_DISABLED=1` to disable the integration.
 
@@ -322,7 +320,7 @@ Step mode is the on-ramp. Auto mode is the highway.
 ### Install
 
 ```bash
-npm install -g gsd-pi
+npm install -g github:danielvm-ciandt/gsd-2-flow
 ```
 
 ### Log in to a provider
@@ -816,8 +814,8 @@ Use expensive models where quality matters (planning, complex execution) and che
 
 ## Star History
 
-<a href="https://star-history.com/#gsd-build/gsd-2&Date">
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=gsd-build/gsd-2&type=Date" />
+<a href="https://star-history.com/#danielvm-ciandt/gsd-2-flow&Date">
+  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=danielvm-ciandt/gsd-2-flow&type=Date" />
 </a>
 
 ---
@@ -832,6 +830,6 @@ Use expensive models where quality matters (planning, complex execution) and che
 
 **The original GSD showed what was possible. This version delivers it.**
 
-**`npm install -g gsd-pi && gsd`**
+**`npm install -g github:danielvm-ciandt/gsd-2-flow && gsd`**
 
 </div>
