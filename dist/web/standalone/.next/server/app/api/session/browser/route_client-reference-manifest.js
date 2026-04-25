@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/session/browser/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"/Users/danielvm/Sites/gsd-2-flow/web/app/api/session/browser/route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};

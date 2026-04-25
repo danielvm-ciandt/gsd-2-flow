@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/remote-questions/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"/Users/danielvm/Sites/gsd-2-flow/web/app/api/remote-questions/route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}};
