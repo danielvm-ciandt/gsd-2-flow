@@ -33,7 +33,7 @@ Thumbs.db
 !.env.example
 node_modules/
 .next/
-/dist/
+# /dist/ intentionally tracked on release branch for GitHub install
 !/pkg/dist/modes/
 !/pkg/dist/core/export-html/
 build/
@@ -58,7 +58,7 @@ packages/*/node_modules/
 preflight-script.ts
 
 # ── GSD baseline (auto-generated) ──
-dist/
+# dist/ intentionally tracked on release branch for GitHub install
 !/pkg/dist/modes/
 !/pkg/dist/core/export-html/
 .bg_shell
